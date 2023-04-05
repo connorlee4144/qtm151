@@ -35,7 +35,11 @@ United States Congress dataset
 
 Create table from codebook/dictionary
 -- SQLBook: Code
+<<<<<<< Updated upstream
 -- Active: 1680027197221@@127.0.0.1@5432@postgres
+=======
+-- Active: 1679948174254@@127.0.0.1@5432@postgres
+>>>>>>> Stashed changes
 -- We start by deleting the old table
 -- SQL does not allow you to create a table if one already exists
 DROP TABLE IF EXISTS us_congress_members;
@@ -85,7 +89,9 @@ Try it yourself!
 - Create a new table for "bills_subjects"
 -- SQLBook: Code
 -- Write your own code
+DROP TABLE IF EXISTS bills_subjects;
 
+<<<<<<< Updated upstream
 DROP TABLE IF exists bills_subjects;
 
 CREATE TABLE bills_subjects(
@@ -94,6 +100,14 @@ CREATE TABLE bills_subjects(
     bill_type varchar(30),
     bill_subject varchar(30)
 )
+=======
+CREATE TABLE bills_subjects (
+    "Congress" int NOT NULL,
+    bill_number int,
+    bill_type varchar(30),
+    bill_subject varchar(30)
+);
+>>>>>>> Stashed changes
 
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Import CSV into SQL </span>
@@ -161,6 +175,17 @@ SELECT * FROM us_congress_members
 ```
 -- SQLBook: Code
 -- Write your own code
+<<<<<<< Updated upstream
+
+=======
+-- Note in the instructor's computer this is:
+-- You just have to change the FROM argument
+--
+COPY us_congress_members
+FROM '/private/tmp/data/us_congress_members.csv'
+WITH (DELIMITER ',', FORMAT csv, HEADER MATCH);
+>>>>>>> Stashed changes
+
 
 
 
